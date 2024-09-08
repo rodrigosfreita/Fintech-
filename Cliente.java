@@ -1,57 +1,57 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cliente {
-    private String nome;
-    private String cpf;
-    private List<Conta> contas;
+public class Customer {
+    private String name;
+    private String socialSecurityNumber;
+    private List<Account> accounts;
 
-    public Cliente(String nome, String cpf) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.contas = new ArrayList<>();
+    public Customer(String name, String socialSecurityNumber) {
+        this.name = name;
+        this.socialSecurityNumber = socialSecurityNumber;
+        this.accounts = new ArrayList<>();
     }
 
-    // Getters e Setters
-    public String getNome() {
-        return nome;
+    // Getters and Setters
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getSocialSecurityNumber() {
+        return socialSecurityNumber;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setSocialSecurityNumber(String socialSecurityNumber) {
+        this.socialSecurityNumber = socialSecurityNumber;
     }
 
-    public List<Conta> getContas() {
-        return contas;
+    public List<Account> getAccounts() {
+        return accounts;
     }
 
-    public void adicionarConta(Conta conta) {
-        this.contas.add(conta);
+    public void addAccount(Account account) {
+        this.accounts.add(account);
     }
 
-    public Conta buscarContaPorNumero(String numeroConta) {
-        for (Conta conta : contas) {
-            if (conta.getNumeroConta().equals(numeroConta)) {
-                return conta;
+    public Account findAccountByNumber(String accountNumber) {
+        for (Account account : accounts) {
+            if (account.getAccountNumber().equals(accountNumber)) {
+                return account;
             }
         }
         return null;
     }
 
-    public void exibirInformacoesCliente() {
-        System.out.println("Nome: " + nome);
-        System.out.println("CPF: " + cpf);
-        System.out.println("Contas: ");
-        for (Conta conta : contas) {
-            System.out.println(" - Conta " + conta.getNumeroConta() + ": " + conta.getSaldo());
+    public void displayCustomerInformation() {
+        System.out.println("Name: " + name);
+        System.out.println("Social Security Number: " + socialSecurityNumber);
+        System.out.println("Accounts: ");
+        for (Account account : accounts) {
+            System.out.println(" - Account " + account.getAccountNumber() + ": " + account.getBalance());
         }
     }
 }
