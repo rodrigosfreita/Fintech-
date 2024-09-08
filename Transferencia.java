@@ -1,28 +1,28 @@
 import java.util.Date;
 
-public class Transferencia extends Transacao {
-    private Conta contaDestino;
+public class Transfer extends Transaction {
+    private Account destinationAccount;
 
-    public Transferencia(String idTransacao, double valor, Date dataTransacao, Conta contaOrigem, Conta contaDestino, String descricao) {
-        super(idTransacao, valor, dataTransacao, contaOrigem, descricao);
-        this.contaDestino = contaDestino;
+    public Transfer(String transactionId, double amount, Date transactionDate, Account sourceAccount, Account destinationAccount, String description) {
+        super(transactionId, amount, transactionDate, sourceAccount, description);
+        this.destinationAccount = destinationAccount;
     }
 
-    public Conta getContaDestino() {
-        return contaDestino;
+    public Account getDestinationAccount() {
+        return destinationAccount;
     }
 
-    public void setContaDestino(Conta contaDestino) {
-        this.contaDestino = contaDestino;
+    public void setDestinationAccount(Account destinationAccount) {
+        this.destinationAccount = destinationAccount;
     }
 
-    public void efetuarTransferencia() {
-        if (contaOrigem.getSaldo() >= valor) {
-            contaOrigem.sacar(valor);
-            contaDestino.depositar(valor);
-            System.out.println("Transferência de " + valor + " realizada com sucesso.");
+    public void executeTransfer() {
+        if (sourceAccount.getBalance() >= amount) {
+            sourceAccount.withdraw(amount);
+            destinationAccount.deposit(amount);
+            System.out.println("Transfer of " + amount + " successfully completed.");
         } else {
-            System.out.println("Saldo insuficiente para realizar a transferência.");
+            System.out.println("Insufficient balance to complete the transfer.");
         }
     }
 }
