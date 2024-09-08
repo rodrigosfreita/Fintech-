@@ -1,17 +1,17 @@
 import java.util.Date;
 
-public class Pagamento extends Transacao {
+public class Payment extends Transaction {
 
-    public Pagamento(String idTransacao, double valor, Date dataTransacao, Conta contaOrigem, String descricao) {
-        super(idTransacao, valor, dataTransacao, contaOrigem, descricao);
+    public Payment(String transactionId, double amount, Date transactionDate, Account sourceAccount, String description) {
+        super(transactionId, amount, transactionDate, sourceAccount, description);
     }
 
-    public void realizarPagamento() {
-        if (contaOrigem.getSaldo() >= valor) {
-            contaOrigem.sacar(valor);
-            System.out.println("Pagamento de " + valor + " realizado com sucesso.");
+    public void makePayment() {
+        if (sourceAccount.getBalance() >= amount) {
+            sourceAccount.withdraw(amount);
+            System.out.println("Payment of " + amount + " successfully completed.");
         } else {
-            System.out.println("Saldo insuficiente para realizar o pagamento.");
+            System.out.println("Insufficient balance to complete the payment.");
         }
     }
 }
