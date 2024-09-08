@@ -1,4 +1,4 @@
-Bank Account Management System
+Bank Account Management System,
 This is a simple Java application that simulates a bank account management system. The application allows users to create customers with multiple accounts, perform transactions such as transfers and payments, and view customer details.
 
 Features
