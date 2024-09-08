@@ -1,65 +1,65 @@
 import java.util.Date;
 
-public class Transacao {
-    protected String idTransacao;
-    protected double valor;
-    protected Date dataTransacao;
-    protected Conta contaOrigem;
-    protected String descricao;
+public class Transaction {
+    protected String transactionId;
+    protected double amount;
+    protected Date transactionDate;
+    protected Account sourceAccount;
+    protected String description;
 
-    public Transacao(String idTransacao, double valor, Date dataTransacao, Conta contaOrigem, String descricao) {
-        this.idTransacao = idTransacao;
-        this.valor = valor;
-        this.dataTransacao = dataTransacao;
-        this.contaOrigem = contaOrigem;
-        this.descricao = descricao;
+    public Transaction(String transactionId, double amount, Date transactionDate, Account sourceAccount, String description) {
+        this.transactionId = transactionId;
+        this.amount = amount;
+        this.transactionDate = transactionDate;
+        this.sourceAccount = sourceAccount;
+        this.description = description;
     }
 
-    // Getters e Setters
-    public String getIdTransacao() {
-        return idTransacao;
+    // Getters and Setters
+    public String getTransactionId() {
+        return transactionId;
     }
 
-    public void setIdTransacao(String idTransacao) {
-        this.idTransacao = idTransacao;
+    public void setTransactionId(String transactionId) {
+        this.transactionId = transactionId;
     }
 
-    public double getValor() {
-        return valor;
+    public double getAmount() {
+        return amount;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
-    public Date getDataTransacao() {
-        return dataTransacao;
+    public Date getTransactionDate() {
+        return transactionDate;
     }
 
-    public void setDataTransacao(Date dataTransacao) {
-        this.dataTransacao = dataTransacao;
+    public void setTransactionDate(Date transactionDate) {
+        this.transactionDate = transactionDate;
     }
 
-    public Conta getContaOrigem() {
-        return contaOrigem;
+    public Account getSourceAccount() {
+        return sourceAccount;
     }
 
-    public void setContaOrigem(Conta contaOrigem) {
-        this.contaOrigem = contaOrigem;
+    public void setSourceAccount(Account sourceAccount) {
+        this.sourceAccount = sourceAccount;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void exibirDetalhesTransacao() {
-        System.out.println("ID Transação: " + idTransacao);
-        System.out.println("Data: " + dataTransacao);
-        System.out.println("Valor: " + valor);
-        System.out.println("Descrição: " + descricao);
+    public void displayTransactionDetails() {
+        System.out.println("Transaction ID: " + transactionId);
+        System.out.println("Date: " + transactionDate);
+        System.out.println("Amount: " + amount);
+        System.out.println("Description: " + description);
     }
 }
